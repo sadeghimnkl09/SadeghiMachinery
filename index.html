@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ماشین‌سازی صادقی | Sadeghi Machinery</title>
+
+<meta name="description"
+content="ماشین‌سازی صادقی | Sadeghi Machinery — طراح و سازنده ماشین‌آلات برش و خم میلگرد، کلاف بازکن و قیچی دوکاره در اصفهان.">
+
+<link rel="canonical" href="https://www.sadeghimachinery.ir/">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#080909">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --bg:#080909;
+    --bg2:#0d0f0f;
+    --panel:#111414;
+    --panel2:#151818;
+
+    --yellow:#ffd000;
+    --yellow2:#f5b800;
+    --yellow3:#a87900;
+
+    --white:#f4f3ed;
+    --muted:#888b86;
+
+    --line:rgba(255,208,0,.13);
+
+    --glow:
+        0 0 10px rgba(255,208,0,.35),
+        0 0 35px rgba(255,208,0,.12);
+
+    --radius:3px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Vazirmatn',sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    line-height:1.9;
+    overflow-x:hidden;
+}
+
+body::selection{
+    background:var(--yellow);
+    color:#000;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================================================
+   GLOBAL ENGINEERING GRID
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+        linear-gradient(rgba(255,208,0,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,208,0,.035) 1px,transparent 1px);
+
+    background-size:50px 50px;
+
+    pointer-events:none;
+    z-index:-5;
+
+    animation:gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+
+    from{
+        background-position:0 0,0 0;
+    }
+
+    to{
+        background-position:50px 50px,50px 50px;
+    }
+
+}
+
+/* =========================================================
+   CINEMATIC INTRO
+========================================================= */
+
+#intro{
+
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(255,208,0,.09),
+        transparent 35%),
+        #050606;
+
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+#intro.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.intro-grid{
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(rgba(255,208,0,.06) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,208,0,.06) 1px,transparent 1px);
+
+    background-size:42px 42px;
+
+    mask-image:
+        radial-gradient(circle,black,transparent 75%);
+
+    animation:introGrid 8s linear infinite;
+}
+
+@keyframes introGrid{
+
+    to{
+        transform:translate(42px,42px);
+    }
+
+}
+
+.intro-content{
+
+    position:relative;
+
+    width:min(1000px,90%);
+
+    text-align:center;
+
+    z-index:3;
+}
+
+/* =========================================================
+   INTRO GEARS
+========================================================= */
+
+.intro-gear{
+
+    position:absolute;
+
+    color:var(--yellow);
+
+    opacity:.7;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,208,0,.4))
+        drop-shadow(0 0 25px rgba(255,208,0,.15));
+
+}
+
+.intro-gear.big{
+
+    width:240px;
+    height:240px;
+
+    left:-50px;
+    top:-100px;
+
+    animation:
+        gearSpin 10s linear infinite;
+
+}
+
+.intro-gear.small{
+
+    width:130px;
+    height:130px;
+
+    right:30px;
+    bottom:-50px;
+
+    opacity:.4;
+
+    animation:
+        gearSpinReverse 7s linear infinite;
+
+}
+
+@keyframes gearSpin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes gearSpinReverse{
+
+    to{
+        transform:rotate(-360deg);
+    }
+
+}
+
+/* =========================================================
+   INTRO TITLE
+========================================================= */
+
+.intro-label{
+
+    font-size:11px;
+
+    letter-spacing:7px;
+
+    color:var(--yellow);
+
+    margin-bottom:25px;
+
+    opacity:0;
+
+    animation:
+        introFade .8s ease .4s forwards;
+
+}
+
+.intro-title{
+
+    direction:ltr;
+
+    font-size:
+        clamp(28px,6.8vw,82px);
+
+    font-weight:900;
+
+    letter-spacing:
+        clamp(2px,.8vw,12px);
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:0;
+
+}
+
+.intro-title span{
+
+    display:inline-block;
+
+    opacity:0;
+
+    transform:
+        translateY(30px)
+        scale(.7)
+        rotateX(70deg);
+
+    color:#252525;
+
+    text-shadow:none;
+
+    animation:
+        letterBuild .55s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+
+}
+
+.intro-title span:nth-child(1){animation-delay:.7s}
+.intro-title span:nth-child(2){animation-delay:.82s}
+.intro-title span:nth-child(3){animation-delay:.94s}
+.intro-title span:nth-child(4){animation-delay:1.06s}
+.intro-title span:nth-child(5){animation-delay:1.18s}
+.intro-title span:nth-child(6){animation-delay:1.30s}
+.intro-title span:nth-child(7){animation-delay:1.42s}
+
+.intro-title span:nth-child(8){animation-delay:1.62s}
+.intro-title span:nth-child(9){animation-delay:1.74s}
+.intro-title span:nth-child(10){animation-delay:1.86s}
+.intro-title span:nth-child(11){animation-delay:1.98s}
+.intro-title span:nth-child(12){animation-delay:2.10s}
+.intro-title span:nth-child(13){animation-delay:2.22s}
+.intro-title span:nth-child(14){animation-delay:2.34s}
+.intro-title span:nth-child(15){animation-delay:2.46s}
+.intro-title span:nth-child(16){animation-delay:2.58s}
+.intro-title span:nth-child(17){animation-delay:2.70s}
+
+@keyframes letterBuild{
+
+    0%{
+        opacity:0;
+        transform:
+            translateY(30px)
+            scale(.7)
+            rotateX(70deg);
+
+        color:#111;
+    }
+
+    60%{
+
+        opacity:1;
+
+        color:var(--yellow);
+
+        text-shadow:
+            0 0 8px var(--yellow),
+            0 0 30px rgba(255,208,0,.8),
+            0 0 70px rgba(255,208,0,.3);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotateX(0);
+
+        color:#fff;
+
+        text-shadow:
+            0 0 15px rgba(255,208,0,.18);
+
+    }
+
+}
+
+.intro-sub{
+
+    margin-top:25px;
+
+    color:#777;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    direction:ltr;
+
+    opacity:0;
+
+    animation:
+        introFade .8s ease 2.95s forwards;
+
+}
+
+@keyframes introFade{
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* mechanical loading line */
+
+.intro-line{
+
+    width:300px;
+    height:2px;
+
+    background:#222;
+
+    margin:35px auto 0;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.intro-line::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--yellow),
+            transparent
+        );
+
+    transform:translateX(-100%);
+
+    animation:
+        introLoad 2.95s ease forwards;
+
+}
+
+@keyframes introLoad{
+
+    to{
+        transform:translateX(100%);
+    }
+
+}
+
+/* =========================================================
+   MOVING BORDER LIGHT
+========================================================= */
+
+.edge-light{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9998;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+/*
+    چهار نور مستقل:
+    top
+    right
+    bottom
+    left
+*/
+
+.edge-light span{
+
+    position:absolute;
+
+    display:block;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--yellow),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px var(--yellow),
+        0 0 35px rgba(255,208,0,.7);
+
+}
+
+/* TOP */
+
+.edge-light .top{
+
+    width:240px;
+    height:2px;
+
+    top:0;
+    left:-250px;
+
+    animation:
+        edgeTop 3.2s linear infinite;
+
+}
+
+@keyframes edgeTop{
+
+    to{
+        left:100%;
+    }
+
+}
+
+/* RIGHT */
+
+.edge-light .right{
+
+    width:2px;
+    height:240px;
+
+    right:0;
+    top:-250px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            var(--yellow),
+            transparent
+        );
+
+    animation:
+        edgeRight 3.2s linear infinite .8s;
+
+}
+
+@keyframes edgeRight{
+
+    to{
+        top:100%;
+    }
+
+}
+
+/* BOTTOM */
+
+.edge-light .bottom{
+
+    width:240px;
+    height:2px;
+
+    bottom:0;
+    right:-250px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--yellow),
+            transparent
+        );
+
+    animation:
+        edgeBottom 3.2s linear infinite 1.6s;
+
+}
+
+@keyframes edgeBottom{
+
+    to{
+        right:100%;
+    }
+
+}
+
+/* LEFT */
+
+.edge-light .left{
+
+    width:2px;
+    height:240px;
+
+    left:0;
+    bottom:-250px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            var(--yellow),
+            transparent
+        );
+
+    animation:
+        edgeLeft 3.2s linear infinite 2.4s;
+
+}
+
+@keyframes edgeLeft{
+
+    to{
+        bottom:100%;
+    }
+
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:100;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5,6,6,.94),
+            rgba(5,6,6,.72)
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid rgba(255,208,0,.12);
+
+}
+
+.nav-inner{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:
+        15px 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-weight:900;
+
+    font-size:19px;
+
+}
+
+.logo-mark{
+
+    width:30px;
+    height:30px;
+
+    border:2px solid var(--yellow);
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+
+    box-shadow:
+        0 0 15px rgba(255,208,0,.15);
+
+}
+
+.logo-mark::before{
+
+    content:"";
+
+    width:10px;
+    height:10px;
+
+    border:2px solid var(--yellow);
+
+    border-radius:50%;
+
+}
+
+.logo-bar{
+
+    width:4px;
+    height:25px;
+
+    background:var(--yellow);
+
+    box-shadow:
+        0 0 15px rgba(255,208,0,.7);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    color:#888;
+
+    font-size:14px;
+
+    transition:.25s;
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    bottom:-7px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--yellow);
+
+    box-shadow:
+        0 0 8px var(--yellow);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#fff;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-phone{
+
+    color:var(--yellow);
+
+    direction:ltr;
+
+    font-size:13px;
+
+    font-weight:800;
+
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 25px;
+
+    border-radius:2px;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    transition:.3s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.25),
+            transparent
+        );
+
+    transition:.5s;
+
+}
+
+.btn:hover::before{
+
+    left:100%;
+
+}
+
+.btn-yellow{
+
+    background:var(--yellow);
+
+    color:#080909;
+
+    box-shadow:
+        0 0 0 rgba(255,208,0,0);
+
+}
+
+.btn-yellow:hover{
+
+    box-shadow:
+        0 0 25px rgba(255,208,0,.3);
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline{
+
+    border:1px solid #444;
+
+    color:#ddd;
+
+}
+
+.btn-outline:hover{
+
+    border-color:var(--yellow);
+
+    color:var(--yellow);
+
+    box-shadow:
+        inset 0 0 20px rgba(255,208,0,.05);
+
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(255,208,0,.09),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(255,208,0,.035),
+            transparent 30%
+        ),
+
+        #080909;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:200px;
+
+    background:
+        linear-gradient(
+            transparent,
+            var(--bg)
+        );
+
+}
+
+.hero-content{
+
+    width:min(1250px,90%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap:80px;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.eyebrow{
+
+    color:var(--yellow);
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    direction:ltr;
+
+}
+
+.hero h1{
+
+    font-size:
+        clamp(45px,6vw,78px);
+
+    line-height:1.08;
+
+    font-weight:900;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1 span{
+
+    color:var(--yellow);
+
+    text-shadow:
+        0 0 25px rgba(255,208,0,.18);
+
+}
+
+.hero-description{
+
+    color:#888;
+
+    max-width:570px;
+
+    font-size:17px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-actions{
+
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+}
+
+/* =========================================================
+   HERO MACHINE PANEL
+========================================================= */
+
+.machine-display{
+
+    position:relative;
+
+    min-height:440px;
+
+    display:grid;
+
+    place-items:center;
+
+}
+
+.machine-circle{
+
+    width:390px;
+    height:390px;
+
+    border:
+        1px solid rgba(255,208,0,.15);
+
+    border-radius:50%;
+
+    position:relative;
+
+    animation:
+        pulseCircle 4s ease-in-out infinite;
+
+}
+
+.machine-circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:25px;
+
+    border:
+        1px dashed rgba(255,208,0,.2);
+
+    border-radius:50%;
+
+    animation:
+        gearSpinReverse 20s linear infinite;
+
+}
+
+.machine-circle::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:65px;
+
+    border:
+        1px solid rgba(255,208,0,.12);
+
+    border-radius:50%;
+
+}
+
+@keyframes pulseCircle{
+
+    50%{
+
+        box-shadow:
+            0 0 60px rgba(255,208,0,.07);
+
+    }
+
+}
+
+.machine-core{
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    border:
+        2px solid var(--yellow);
+
+    transform:rotate(45deg);
+
+    box-shadow:
+        0 0 25px rgba(255,208,0,.18),
+        inset 0 0 30px rgba(255,208,0,.05);
+
+}
+
+.machine-core::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:25px;
+
+    border:
+        1px solid var(--yellow);
+
+}
+
+.machine-data{
+
+    position:absolute;
+
+    right:-15px;
+    top:55px;
+
+    background:#0d0f0f;
+
+    border:
+        1px solid rgba(255,208,0,.2);
+
+    padding:13px 18px;
+
+    font-size:11px;
+
+    color:#777;
+
+}
+
+.machine-data strong{
+
+    display:block;
+
+    color:var(--yellow);
+
+    font-size:18px;
+
+    direction:ltr;
+
+}
+
+.machine-data.two{
+
+    left:-20px;
+    right:auto;
+
+    top:auto;
+    bottom:55px;
+
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+
+    position:relative;
+
+    padding:120px 0;
+
+}
+
+.container{
+
+    width:min(1180px,90%);
+
+    margin:auto;
+
+}
+
+.section-head{
+
+    margin-bottom:55px;
+
+}
+
+.section-head small{
+
+    color:var(--yellow);
+
+    letter-spacing:3px;
+
+    font-size:11px;
+
+    direction:ltr;
+
+}
+
+.section-head h2{
+
+    font-size:
+        clamp(30px,4vw,48px);
+
+    margin-top:10px;
+
+}
+
+.section-head p{
+
+    color:#777;
+
+    max-width:500px;
+
+    margin-top:12px;
+
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+
+    background:
+        linear-gradient(
+            180deg,
+            #0c0e0e,
+            #080909
+        );
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr .8fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.about-text p{
+
+    color:#888;
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+}
+
+.highlight-list{
+
+    margin:24px 0 6px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:13px;
+
+}
+
+.highlight-list li{
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:12px;
+
+    color:var(--white);
+    font-size:15px;
+    line-height:1.75;
+
+}
+
+.highlight-list li::before{
+
+    content:"";
+    flex-shrink:0;
+
+    width:9px;
+    height:9px;
+
+    margin-top:7px;
+
+    background:var(--yellow);
+    transform:rotate(45deg);
+
+    box-shadow:
+        0 0 8px rgba(255,208,0,.6);
+
+}
+
+.tag-strip{
+
+    margin-top:24px;
+    padding-top:20px;
+
+    border-top:
+        1px dashed rgba(255,208,0,.15);
+
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    font-size:14.5px;
+
+    color:var(--muted);
+
+}
+
+.tag-strip .tag-gear{
+
+    display:inline-block;
+
+    color:var(--yellow);
+
+    animation:
+        gearSpin 5s linear infinite;
+
+}
+
+.tag-strip .sep{
+
+    color:rgba(255,208,0,.35);
+
+}
+
+.about-stats{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+}
+
+.stat{
+
+    background:
+        linear-gradient(
+            145deg,
+            #151818,
+            #0d0f0f
+        );
+
+    border:
+        1px solid rgba(255,208,0,.08);
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.stat::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    right:-60px;
+    top:-60px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,208,0,.08);
+
+    filter:blur(20px);
+
+}
+
+.stat:hover{
+
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(255,208,0,.3);
+
+}
+
+.stat strong{
+
+    display:block;
+
+    color:var(--yellow);
+
+    font-size:35px;
+
+}
+
+.stat span{
+
+    color:#777;
+
+    font-size:12px;
+
+}
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products{
+
+    background:#080909;
+
+}
+
+.product-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+.product{
+
+    background:#101313;
+
+    border:
+        1px solid rgba(255,255,255,.05);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+.product:hover{
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(255,208,0,.35);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.product-image{
+
+    aspect-ratio:1/1;
+
+    background:
+        radial-gradient(
+            circle,
+            #252827,
+            #080909
+        );
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.product-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 45%,
+            rgba(255,208,0,.1) 50%,
+            transparent 55%
+        );
+
+    transform:
+        translateX(-100%);
+
+    transition:.7s;
+
+}
+
+.product:hover
+.product-image::before{
+
+    transform:
+        translateX(100%);
+
+}
+
+.product-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    padding:20px;
+
+}
+
+.product-code{
+
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    font-size:9px;
+
+    color:var(--yellow);
+
+    border:
+        1px solid rgba(255,208,0,.25);
+
+    padding:4px 7px;
+
+    direction:ltr;
+
+}
+
+.product-body{
+
+    padding:22px;
+
+}
+
+.product-body h3{
+
+    font-size:17px;
+
+    margin-bottom:7px;
+
+}
+
+.product-body p{
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+.product-link{
+
+    display:block;
+
+    margin-top:18px;
+
+    padding-top:13px;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    color:var(--yellow);
+
+    font-size:12px;
+
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location{
+
+    background:#0c0e0e;
+
+}
+
+.location-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+.location-info p{
+
+    color:#777;
+
+    margin-bottom:25px;
+
+}
+
+.contact-item{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.contact-icon{
+
+    width:38px;
+    height:38px;
+
+    border:
+        1px solid rgba(255,208,0,.2);
+
+    display:grid;
+
+    place-items:center;
+
+    color:var(--yellow);
+
+}
+
+.contact-item strong{
+
+    display:block;
+
+    font-size:13px;
+
+}
+
+.contact-item span{
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+.map{
+
+    height:420px;
+
+    border:
+        1px solid rgba(255,208,0,.18);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.map iframe{
+
+    width:100%;
+    height:100%;
+
+    border:0;
+
+    filter:
+        grayscale(1)
+        contrast(1.2)
+        brightness(.65);
+
+}
+
+/* map scan */
+
+.map::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--yellow),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px var(--yellow);
+
+    animation:
+        mapScan 4s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes mapScan{
+
+    from{
+        top:-5px;
+    }
+
+    to{
+        top:100%;
+    }
+
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+
+    background:
+
+        radial-gradient(
+            circle at 20%,
+            rgba(255,208,0,.15),
+            transparent 30%
+        ),
+
+        #ffd000;
+
+    color:#090909;
+
+}
+
+.contact-inner{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+}
+
+.contact h2{
+
+    font-size:
+        clamp(27px,4vw,45px);
+
+}
+
+.contact p{
+
+    opacity:.65;
+
+    margin-top:8px;
+
+}
+
+.contact-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.contact-btn{
+
+    background:#090909;
+
+    color:var(--yellow);
+
+    padding:15px 25px;
+
+    font-weight:900;
+
+    direction:ltr;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#050606;
+
+    padding:60px 0 25px;
+
+}
+
+.footer-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    padding-bottom:35px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+}
+
+.footer-text{
+
+    max-width:300px;
+
+    color:#666;
+
+    font-size:13px;
+
+    margin-top:12px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    gap:80px;
+
+}
+
+.footer-column h4{
+
+    color:var(--yellow);
+
+    font-size:13px;
+
+    margin-bottom:15px;
+
+}
+
+.footer-column a,
+.footer-column span{
+
+    display:block;
+
+    color:#666;
+
+    font-size:12px;
+
+    margin-bottom:9px;
+
+}
+
+.footer-bottom{
+
+    padding-top:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#444;
+
+    font-size:11px;
+
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+.mobile-menu{
+
+    display:none;
+
+    background:none;
+
+    border:0;
+
+    color:#fff;
+
+    font-size:25px;
+
+}
+
+@media(max-width:950px){
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:70px;
+
+        left:0;
+        right:0;
+
+        background:#080909;
+
+        padding:25px;
+
+        flex-direction:column;
+
+        gap:18px;
+
+        border-bottom:
+            1px solid rgba(255,208,0,.15);
+
+    }
+
+    .nav-links.open{
+
+        display:flex;
+
+    }
+
+    .mobile-menu{
+
+        display:block;
+
+    }
+
+    .nav-phone{
+
+        display:none;
+
+    }
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .hero-description{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hero-actions{
+
+        justify-content:center;
+
+    }
+
+    .machine-display{
+
+        transform:scale(.75);
+
+        margin-top:-50px;
+
+    }
+
+    .about-grid,
+    .location-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .product-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .contact-inner{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .product-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-stats{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+    .footer-top{
+
+        flex-direction:column;
+
+    }
+
+    .footer-links{
+
+        gap:35px;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+    }
+
+    .machine-circle{
+
+        width:300px;
+        height:300px;
+
+    }
+
+    .intro-title{
+
+        font-size:
+            clamp(19px,6vw,30px);
+
+        letter-spacing:2px;
+
+    }
+
+}
+
+@media(max-width:360px){
+
+    .intro-title{
+
+        font-size:16px;
+
+        letter-spacing:1px;
+
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CINEMATIC INTRO
+===================================================== -->
+
+<div id="intro">
+
+    <div class="intro-grid"></div>
+
+    <div class="intro-content">
+
+        <svg class="intro-gear big"
+             viewBox="0 0 100 100"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2">
+
+            <circle cx="50" cy="50" r="18"/>
+            <circle cx="50" cy="50" r="6"/>
+
+            <path d="
+            M50 3 L56 3 L58 14
+            M50 97 L44 97 L42 86
+            M3 50 L3 44 L14 42
+            M97 50 L97 56 L86 58
+            M16 16 L21 12 L29 21
+            M84 84 L79 88 L71 79
+            M84 16 L79 12 L71 21
+            M16 84 L21 88 L29 79
+            "/>
+
+        </svg>
+
+
+        <svg class="intro-gear small"
+             viewBox="0 0 100 100"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2">
+
+            <circle cx="50" cy="50" r="18"/>
+            <circle cx="50" cy="50" r="6"/>
+
+            <path d="
+            M50 3 L56 3 L58 14
+            M50 97 L44 97 L42 86
+            M3 50 L3 44 L14 42
+            M97 50 L97 56 L86 58
+            M16 16 L21 12 L29 21
+            M84 84 L79 88 L71 79
+            M84 16 L79 12 L71 21
+            M16 84 L21 88 L29 79
+            "/>
+
+        </svg>
+
+
+        <div class="intro-label">
+            INDUSTRIAL ENGINEERING
+        </div>
+
+
+        <div class="intro-title" aria-label="Sadeghi Machinery">
+
+            <span>S</span>
+            <span>A</span>
+            <span>D</span>
+            <span>E</span>
+            <span>G</span>
+            <span>H</span>
+            <span>I</span>
+
+            <span>&nbsp;</span>
+
+            <span>M</span>
+            <span>A</span>
+            <span>C</span>
+            <span>H</span>
+            <span>I</span>
+            <span>N</span>
+            <span>E</span>
+            <span>R</span>
+            <span>Y</span>
+
+        </div>
+
+
+        <div class="intro-sub">
+            PRECISION • POWER • DURABILITY
+        </div>
+
+
+        <div class="intro-line"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MOVING EDGE LIGHT
+===================================================== -->
+
+<div class="edge-light">
+
+    <span class="top"></span>
+    <span class="right"></span>
+    <span class="bottom"></span>
+    <span class="left"></span>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+
+            <span class="logo-mark"></span>
+
+            <span class="logo-bar"></span>
+
+            <span>
+                ماشین‌سازی صادقی
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links" id="nav">
+
+            <a href="#home">خانه</a>
+            <a href="#about">درباره ما</a>
+            <a href="#products">محصولات</a>
+            <a href="#location">کارخانه</a>
+            <a href="#contact">تماس</a>
+
+        </nav>
+
+
+        <div style="display:flex;align-items:center;gap:18px;">
+
+            <span class="nav-phone">
+                09131251940
+            </span>
+
+            <a href="#contact"
+               class="btn btn-yellow"
+               style="padding:9px 17px;font-size:12px;">
+                تماس با ما
+            </a>
+
+            <button class="mobile-menu"
+                    id="menu">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="reveal">
+
+            <div class="eyebrow">
+                EST. 1375 / ISFAHAN
+            </div>
+
+            <h1>
+
+                مهندسی برای
+                <br>
+
+                <span>
+                    دوام.
+                </span>
+
+                قدرت.
+                دقت.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                ماشین‌سازی صادقی،
+                طراح و سازنده ماشین‌آلات
+                برش و خم میلگرد و تجهیزات
+                صنعتی آرماتوربندی.
+
+                بیش از سه دهه تجربه
+                در ساخت ماشین‌آلات صنعتی.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a href="#products"
+                   class="btn btn-yellow">
+
+                    مشاهده ماشین‌آلات
+
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline">
+
+                    ارتباط با کارخانه
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ENGINEERING VISUAL -->
+
+        <div class="machine-display reveal">
+
+            <div class="machine-circle">
+
+                <div class="machine-core"></div>
+
+                <div class="machine-data">
+
+                    SYSTEM
+
+                    <strong>
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+                <div class="machine-data two">
+
+                    INDUSTRIAL
+
+                    <strong>
+                        30+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-text reveal">
+
+                <div class="section-head">
+
+                    <small>
+                        ABOUT / 01
+                    </small>
+
+                    <h2>
+                        سه دهه ساخت
+                        برای صنعت
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    ماشین‌سازی صادقی از سال ۱۳۷۵
+                    در زمینه طراحی و ساخت
+                    ماشین‌آلات صنعتی فعالیت می‌کند.
+                </p>
+
+                <p>
+                    تمرکز اصلی مجموعه بر طراحی و
+                    تولید تجهیزات مورد استفاده در
+                    صنعت ساختمان، آرماتوربندی و
+                    کارگاه‌های آهن‌آلات است.
+                </p>
+
+                <p>
+                    فلسفه ما ساده است:
+                    ماشین باید برای کار ساخته شود،
+                    نه صرفاً برای نمایش.
+                </p>
+
+                <ul class="highlight-list">
+
+                    <li>بیش از ۳۰ سال تجربه در ساخت دستگاه‌های ساختمانی</li>
+                    <li>حضور در نمایشگاه‌های معتبر صنعتی</li>
+                    <li>دارنده گواهی ثبت اختراع در حوزه تجهیزات عمرانی</li>
+
+                </ul>
+
+                <div class="tag-strip">
+                    <span class="tag-gear">⚙</span>
+                    برش میلگرد
+                    <span class="sep">|</span>
+                    کلاف‌بازکن
+                    <span class="sep">|</span>
+                    خاموت‌زن
+                    <span class="sep">|</span>
+                </div>
+
+            </div>
+
+
+            <div class="about-stats reveal">
+
+                <div class="stat">
+
+                    <strong>
+                        ۳۰+
+                    </strong>
+
+                    <span>
+                        سال تجربه
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        ۶
+                    </strong>
+
+                    <span>
+                        خانواده محصول
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        ۱۰۰٪
+                    </strong>
+
+                    <span>
+                        ساخت داخل
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        24/7
+                    </strong>
+
+                    <span>
+                        پشتیبانی فنی
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="products" id="products">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <small>
+                PRODUCTS / 02
+            </small>
+
+            <h2>
+                ماشین‌آلات صادقی
+            </h2>
+
+            <p>
+                تجهیزات صنعتی طراحی‌شده
+                برای کار مداوم، فشار بالا
+                و استفاده حرفه‌ای.
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <span class="product-code">
+                        MDL-01
+                    </span>
+
+                    <div style="
+                        font-size:70px;
+                        color:#292d2c;
+                        font-weight:900;
+                        ">
+                        ⚙
+                    </div>
+
+                </div>
+
+                <div class="product-body">
+
+                    <h3>
+                        دستگاه برش میلگرد
+                    </h3>
+
+                    <p>
+                        برش دقیق میلگرد
+                        برای کاربردهای صنعتی
+                        و ساختمانی.
+                    </p>
+
+                    <a href="#contact"
+                       class="product-link">
+
+                        استعلام مشخصات و قیمت ←
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 2 -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <span class="product-code">
+                        MDL-02
+                    </span>
+
+                    <img
+                        src="images/dastgah-kham-milgerd.jpg"
+                        alt="دستگاه خم میلگرد"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-body">
+
+                    <h3>
+                        دستگاه خم میلگرد
+                    </h3>
+
+                    <p>
+                        خم‌کاری میلگرد
+                        در سایزهای مختلف
+                        با دقت بالا.
+                    </p>
+
+                    <a href="#contact"
+                       class="product-link">
+
+                        استعلام مشخصات و قیمت ←
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 3 -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <span class="product-code">
+                        MDL-03
+                    </span>
+
+                    <div style="
+                        font-size:70px;
+                        color:#292d2c;
+                        font-weight:900;
+                        ">
+                        ⚙
+                    </div>
+
+                </div>
+
+                <div class="product-body">
+
+                    <h3>
+                        دستگاه کلاف بازکن
+                    </h3>
+
+                    <p>
+                        باز و صاف‌کردن
+                        کلاف میلگرد
+                        پیش از تولید.
+                    </p>
+
+                    <a href="#contact"
+                       class="product-link">
+
+                        استعلام مشخصات و قیمت ←
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 4 -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <span class="product-code">
+                        MDL-04
+                    </span>
+
+                    <img
+                        src="images/gheychi-dokare.jpg"
+                        alt="دستگاه قیچی دوکاره"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-body">
+
+                    <h3>
+                        دستگاه قیچی دوکاره
+                    </h3>
+
+                    <p>
+                        برش سریع و دقیق
+                        میلگرد برای خطوط
+                        حرفه‌ای آرماتوربندی.
+                    </p>
+
+                    <a href="#contact"
+                       class="product-link">
+
+                        استعلام مشخصات و قیمت ←
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="location" id="location">
+
+    <div class="container">
+
+        <div class="location-grid">
+
+            <div class="location-info reveal">
+
+                <div class="section-head">
+
+                    <small>
+                        FACTORY / 03
+                    </small>
+
+                    <h2>
+                        کارخانه
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    برای بازدید از مجموعه،
+                    مشاهده ماشین‌آلات و دریافت
+                    مشاوره فنی با ما تماس بگیرید.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ⌖
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            آدرس
+                        </strong>
+
+                        <span>
+                            اصفهان، خیابان شهیدان غربی،
+                            روبروی کوچه ۴۳،
+                            پلاک ۵۷۰
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            تلفن
+                        </strong>
+
+                        <span style="direction:ltr;display:block;">
+                            09131251940
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✈
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Telegram
+                        </strong>
+
+                        <span style="direction:ltr;display:block;">
+                            @Sadeghimachinery_isf
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="map reveal">
+
+                <iframe
+                    loading="lazy"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=51.5796%2C32.6399%2C51.6846%2C32.7099&layer=mapnik&marker=32.6749261%2C51.6320930"
+                    title="نقشه کارخانه ماشین سازی صادقی">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-inner">
+
+            <div>
+
+                <h2>
+                    یک ماشین خوب،
+                    سال‌ها کار می‌کند.
+                </h2>
+
+                <p>
+                    برای قیمت، مشخصات فنی
+                    و مشاوره انتخاب دستگاه
+                    با ما تماس بگیرید.
+                </p>
+
+            </div>
+
+
+            <div class="contact-buttons">
+
+                <a
+                    href="tel:09131251940"
+                    class="contact-btn">
+
+                    09131251940
+
+                </a>
+
+
+                <a
+                    href="https://t.me/Sadeghimachinery_isf"
+                    target="_blank"
+                    class="contact-btn">
+
+                    TELEGRAM
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="logo">
+
+                    <span class="logo-mark"></span>
+
+                    <span class="logo-bar"></span>
+
+                    ماشین‌سازی صادقی
+
+                </div>
+
+
+                <p class="footer-text">
+
+                    طراح و سازنده ماشین‌آلات
+                    صنعتی و تجهیزات آرماتوربندی
+                    در اصفهان.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h4>
+                        NAVIGATION
+                    </h4>
+
+                    <a href="#home">
+                        خانه
+                    </a>
+
+                    <a href="#about">
+                        درباره ما
+                    </a>
+
+                    <a href="#products">
+                        محصولات
+                    </a>
+
+                    <a href="#location">
+                        کارخانه
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        CONTACT
+                    </h4>
+
+                    <span>
+                        09131251940
+                    </span>
+
+                    <span>
+                        @Sadeghimachinery_isf
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © ۱۴۰۴ ماشین‌سازی صادقی
+            </span>
+
+            <span>
+                SADEGHI MACHINERY
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("intro")
+            .classList.add("hide");
+
+    },4500);
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menu =
+    document.getElementById("menu");
+
+const nav =
+    document.getElementById("nav");
+
+menu.addEventListener("click",()=>{
+
+    nav.classList.toggle("open");
+
+});
+
+
+nav.querySelectorAll("a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        nav.classList.remove("open");
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+    new IntersectionObserver(
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(el=>{
+
+        observer.observe(el);
+
+    });
+
+
+/* =========================================================
+   MOUSE LIGHT
+========================================================= */
+
+const mouseLight =
+    document.createElement("div");
+
+mouseLight.style.position="fixed";
+mouseLight.style.width="300px";
+mouseLight.style.height="300px";
+mouseLight.style.borderRadius="50%";
+mouseLight.style.pointerEvents="none";
+mouseLight.style.zIndex="0";
+mouseLight.style.background=
+    "radial-gradient(circle,rgba(255,208,0,.045),transparent 70%)";
+mouseLight.style.transform="translate(-50%,-50%)";
+mouseLight.style.opacity="0";
+mouseLight.style.transition="opacity .3s";
+
+document.body.appendChild(mouseLight);
+
+
+window.addEventListener("mousemove",(e)=>{
+
+    mouseLight.style.left=e.clientX+"px";
+    mouseLight.style.top=e.clientY+"px";
+    mouseLight.style.opacity="1";
+
+});
+
+
+/* =========================================================
+   PRODUCT IMAGE FALLBACK
+========================================================= */
+
+document
+.querySelectorAll(".product-image img")
+.forEach(img=>{
+
+    img.addEventListener("error",()=>{
+
+        img.style.display="none";
+
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>
